@@ -25,14 +25,14 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/thank" element={<ThankYou />} />
-          <Route path="/purchase" element={
-            <RequireAuth>
-              <Purchase />
-            </RequireAuth>
-          } />
-
-
-
+          <Route
+            path="/services/:serviceId"
+            element={
+              <RequireAuth>
+                <Purchase />
+              </RequireAuth>
+            }
+          />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
@@ -40,7 +40,7 @@ function App() {
         <ToastContainer />
       </div>
       <div className="mx-auto">
-       <Footer />
+        <Footer />
       </div>
     </>
   );

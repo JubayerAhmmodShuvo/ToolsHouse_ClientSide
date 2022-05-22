@@ -5,7 +5,7 @@ const SingleService = ({ service }) => {
   const { _id, img, price, quantity, name, minimum, sold, description } = service;
    const navigate = useNavigate();
    const navigateToolsDetail = (id) => {
-     navigate(`/books/${id}`);
+     navigate(`/services/${id}`);
    };
   return (
     <div class="card card-compact w-full bg-base-100 shadow-xl">
