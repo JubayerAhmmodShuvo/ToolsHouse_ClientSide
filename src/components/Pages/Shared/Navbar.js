@@ -75,11 +75,8 @@ const Navbar = () => {
               {menuItem}
             </ul>
           </div>
-          <Link to="/" className=" btn btn-ghost  ">
-         
-            Squirrel
-            tools 
-          
+          <Link to="/" className=" btn btn-ghost font-bold italic text-lg ">
+            Squirrel tools
           </Link>
           <Link to="/home" className="btn btn-ghost pr-4 pt-1">
             Home

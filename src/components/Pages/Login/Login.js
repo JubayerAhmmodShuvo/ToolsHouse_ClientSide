@@ -142,7 +142,7 @@ const Login = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full mx-auto max-w-xs">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text"></span>
               </label>
               <input
                 type="email"
@@ -174,7 +174,7 @@ const Login = () => {
             </div>
             <div className="form-control mx-auto w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text"></span>
               </label>
               <input
                 type="password"
