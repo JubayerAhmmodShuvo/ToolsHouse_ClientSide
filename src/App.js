@@ -11,6 +11,7 @@ import Footer from "./components/Pages/Shared/Footer";
 import NotFound from "./components/Pages/Shared/NotFound";
 import RequireAuth from "./components/Pages/RequireAuth/RequireAuth";
 import Purchase from "./components/Pages/Purchase/Purchase";
+import Summary from "./components/Pages/Home/Summary";
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/thank" element={<ThankYou />} />
+        
           <Route
             path="/services/:serviceId"
             element={
