@@ -2,7 +2,10 @@ import React from "react";
 import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
-import auth from "../../firebase.init";
+import auth from "../../../firebase.init";
+
+
+
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -72,10 +75,13 @@ const Navbar = () => {
               {menuItem}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost normal-case text-xl">
-            Manufacturer World
+          <Link to="/" className=" btn btn-ghost  ">
+         
+            Squirrel
+            tools 
+          
           </Link>
-          <Link to="/home" className="btn btn-ghost pt-2">
+          <Link to="/home" className="btn btn-ghost pr-4 pt-1">
             Home
           </Link>
         </div>
