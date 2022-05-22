@@ -11,7 +11,7 @@ const Summary = () => {
         <p className=" text-2xl font-semibold mb-4 font-serif   text-center ">
           WE WORK HARD, WE PLAY HARD
         </p>
-        <h1 className="text-center text-4xl font-bold  font-serif text-emerald-800  mb-16 ">
+        <h1 className="text-center text-4xl font-bold  font-serif text-emerald-600  mb-16 ">
           OUR USER EXPECTATIONS
         </h1>
       </div>
