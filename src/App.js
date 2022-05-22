@@ -9,6 +9,8 @@ import SignUp from "./components/Pages/Login/SignUp";
 import ThankYou from "./components/Pages/Shared/ThankYou";
 import Footer from "./components/Pages/Shared/Footer";
 import NotFound from "./components/Pages/Shared/NotFound";
+import RequireAuth from "./components/Pages/RequireAuth/RequireAuth";
+import Purchase from "./components/Pages/Purchase/Purchase";
 
 
 
@@ -23,10 +25,15 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/thank" element={<ThankYou />} />
+          <Route path="/purchase" element={
+            <RequireAuth>
+              <Purchase />
+            </RequireAuth>
+          } />
 
 
 
-          
+
           <Route path="*" element={<NotFound />} />
         </Routes>
 

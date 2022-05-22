@@ -1,0 +1,60 @@
+[{
+    "name": "Drill Machine",
+    "price": 12.99,
+    "quantity": 773,
+    "minimum": 50,
+    "sold": 0,
+    "description": "A drilling machine, also called a drill press, is a powerful tool used to cut a round hole into or through metal, plastic, wood, or other solid materials through turning and advancing rotary drill bits into a workpiece.",
+    "img": "https://c1.wallpaperflare.com/preview/919/458/466/drill-machine-equipment-tool.jpg"
+  },
+  {
+    "name": "Hammer",
+
+    "price": 14.32,
+    "quantity": 466,
+    "minimum": 50,
+    "sold": 0,
+    "description": "Hammers are used for general carpentry, framing, nail pulling, cabinet making, assembling furniture, upholstering, finishing, riveting, bending or shaping metal, striking masonry drill and steel chisels, and so on. ",
+    "img": "https://images.unsplash.com/photo-1575908393823-8e6ee16403d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fHRvb2x8ZW58MHx8MHx8&w=1000&q=80"
+  },
+  {
+    "name": "Paint Roller",
+
+    "price": 11.22,
+    "quantity": 733,
+    "minimum": 50,
+    "sold": 0,
+    "description": "A paint roller is a paint application tool used for painting large flat surfaces rapidly and efficiently.Roller provides thin, uniform and even coats, and is an ideal tool for painting large, smooth and well-prepared walls, ceilings, and large furniture.",
+    "img": "https://thumbs.dreamstime.com/b/red-paint-roller-plastic-isolated-white-background-34638116.jpg"
+  },
+  {
+    "name": "Paint Brush",
+
+    "price": 9.99,
+    "quantity": 766,
+    "minimum": 50,
+    "sold": 0,
+    "description": "A paintbrush is a brush used to apply paint or ink. A paintbrush is usually made by clamping bristles to a handle with a ferrule. They are available in various sizes, shapes, and materials. Thicker ones are used for filling in, and thinner ones are used for details.",
+    "img": "https://images.unsplash.com/photo-1563784269116-ff83fae17724?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNwaWxsZWR8ZW58MHx8Mnx8&w=1000&q=80"
+  },
+  {
+    "name": "Glue Gun",
+
+    "price": 11.99,
+    "quantity": 923,
+    "minimum": 50,
+    "sold": 0,
+    "description": "A hot glue gun is a hand-held device that uses a heating element to heat and melt solid glue. Once the adhesive has melted, it can be directed out of the gun's nozzle and then onto a given object",
+    "img": "https://media.sketchfab.com/models/94e767c3140140ea9abc373338a90a33/thumbnails/af7b93d97ee840c7ab9c129ddf1dcfc5/56897472db2d478da0c25cddcf393769.jpeg"
+  },
+  {
+    "name": "Soldering Iron",
+
+    "price": 12.5,
+    "quantity": 643,
+    "minimum": 50,
+    "sold": 0,
+    "description": "A soldering iron is a hand tool used to heat solder, usually from an electrical supply at high temperatures above the melting point of the metal alloy. This allows for the solder to flow between the workpieces needing to be joined.",
+    "img": "https://images.unsplash.com/photo-1593616307659-07f02b400e14?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c29sZGVyfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+  }
+]

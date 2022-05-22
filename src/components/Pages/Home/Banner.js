@@ -3,11 +3,11 @@ import React from 'react';
 const Banner = () => {
   return (
     <>
-      <div className=" my-10">
+      <div className=" mt-12">
         <h1 className="text-3xl font-semibold italic text-center ">
-          Tools We Provide
+          Our Prorities <span className="text-red-500" >!</span>
         </h1>
-        <hr className="w-1/5 border-2 mx-auto mt-4 border-sky-800" />
+        <hr className="w-1/6 border-2 mx-auto mt-4 border-sky-800" />
       </div>
       <div className="my-20">
         <div className="carousel w-full h-96 my-8">
