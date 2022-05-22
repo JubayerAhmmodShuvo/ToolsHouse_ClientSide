@@ -8,7 +8,7 @@ import auth from "../../../firebase.init";
 
 
 const Navbar = () => {
-  const [user, loading, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const logout = () => {
     signOut(auth);
     localStorage.removeItem("accessToken");
@@ -17,7 +17,7 @@ const Navbar = () => {
   const menuItem = (
     <>
       <li>
-        <Link to="/"></Link>
+        <Link to="/home">Home</Link>
       </li>
       <li>
         <Link to="/appointment"></Link>
@@ -78,9 +78,7 @@ const Navbar = () => {
           <Link to="/" className=" btn btn-ghost font-bold italic text-lg ">
             Squirrel tools
           </Link>
-          <Link to="/home" className="btn btn-ghost pr-4 pt-1">
-            Home
-          </Link>
+         
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0">{menuItem}</ul>
