@@ -23,7 +23,9 @@ const Summary = () => {
             <h1 className="text-4xl font-extrabold text-center italic text-emerald-500   ">
               120M
             </h1>
-            <p className="font-bold p-2 text-lg">Annul Revenue</p>
+            <p className="font-bold p-2 text-lg mt-6 text-teal-500">
+              Annul Revenue
+            </p>
           </div>
         </div>
         <div>
@@ -32,7 +34,9 @@ const Summary = () => {
             <h1 className="text-4xl font-extrabold text-center italic text-emerald-500  ">
               120+
             </h1>
-            <p className="font-bold p-2 text-lg 	">Happy Clients</p>
+            <p className="font-bold p-2 text-lg mt-6 text-teal-500	">
+              Happy Clients
+            </p>
           </div>
         </div>
         <div>
@@ -41,7 +45,9 @@ const Summary = () => {
             <h1 className="text-4xl font-extrabold text-center italic text-emerald-500  ">
               33k+
             </h1>
-            <p className="font-bold p-2 text-lg">Total Review</p>
+            <p className="font-bold p-2 text-lg mt-6 text-teal-500">
+              Total Review
+            </p>
           </div>
         </div>
         <div>
@@ -50,7 +56,7 @@ const Summary = () => {
             <h1 className="text-4xl font-extrabold text-center  italic  text-emerald-500">
               50+
             </h1>
-            <p className="font-bold p-2 text-lg">Tools</p>
+            <p className="font-bold p-2 text-lg mt-6 text-teal-500">Tools</p>
           </div>
         </div>
       </div>
