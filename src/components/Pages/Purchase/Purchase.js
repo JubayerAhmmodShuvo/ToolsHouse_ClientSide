@@ -22,7 +22,8 @@ const Purchase = () => {
       email: user.email,
     userName: user.displayName,
       address:data.address,
-      phone:data.phone
+      phone: data.phone,
+      quantity:data.quantity
     }
    
 
@@ -45,7 +46,7 @@ const Purchase = () => {
 
   return (
     <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-10 my-12 ">
-      <div className=" mx-auto mt-20">
+      <div className=" mx-auto my-auto">
         <img src={img} alt="" />
       </div>
       <div className="mx-auto ">
