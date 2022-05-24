@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
@@ -6,7 +6,8 @@ import auth from '../../../firebase.init';
 import Loading from '../Loading/Loading';
 
 const AddReview = () => {
-  const [user,isLoading] = useAuthState(auth);
+  const [user, isLoading] = useAuthState(auth);
+  const [disabled, setDisable] = useState(false);
 const {
   register,
   formState: { errors },
@@ -32,7 +33,8 @@ const {
             const review = {
               name: data.name,
              description: data.description,
-              img: img
+              img: img,
+              review: data.review
             };
            // console.log(review);
             const url = `http://localhost:5000/review`;
@@ -109,9 +111,9 @@ const {
             })}
           />
           <label className="label">
-            {errors.email?.type === "required" && (
+            {errors.review?.type === "required" && (
               <span className="label-text-alt text-red-500">
-                {errors.email.message}
+                {errors.review.message}
               </span>
             )}
           </label>
@@ -123,19 +125,34 @@ const {
           </label>
           <input
             type="text"
-            placeholder="Your Review"
+            placeholder="Your Rating"
             className="input input-bordered w-full max-w-xs"
-            {...register("description", {
+            {...register("rating",{
+              onChange: (e) => {
+                const value = e.target.value;
+
+                if (value > 5) {
+                  toast.error("You cannot rate more than 5");
+
+                  setDisable(true);
+                } else if (value <1) {
+                  toast.error("You cannot rate less than 1");
+                  setDisable(true);
+                } else {
+                  setDisable(false);
+                }
+              },
+            }, {
               required: {
                 value: true,
-                message: "Review is Required",
+                message: "Rating  is Required",
               },
             })}
           />
           <label className="label">
-            {errors.email?.type === "required" && (
+            {errors.rating?.type === "required" && (
               <span className="label-text-alt text-red-500">
-                {errors.email.message}
+                {errors.rating.message}
               </span>
             )}
           </label>
@@ -156,9 +173,9 @@ const {
             })}
           />
           <label className="label">
-            {errors.name?.type === "required" && (
+            {errors.image?.type === "required" && (
               <span className="label-text-alt text-red-500">
-                {errors.name.message}
+                {errors.image.message}
               </span>
             )}
           </label>
@@ -167,7 +184,8 @@ const {
         <input
           className="btn w-full max-w-xs text-white"
           type="submit"
-          value="Add"
+          value="Add Review"
+          disabled={disabled}
         />
       </form>
     </div>

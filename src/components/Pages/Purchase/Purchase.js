@@ -36,7 +36,7 @@ const Purchase = () => {
       },
       body: JSON.stringify(order),
     }).then(() => {
-      console.log(order);
+      //console.log(order);
       toast.success("Item Added Successfully");
       reset();
        
