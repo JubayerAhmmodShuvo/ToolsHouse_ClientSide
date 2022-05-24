@@ -34,7 +34,7 @@ const {
               name: data.name,
              description: data.description,
               img: img,
-              review: data.review
+              rating: data.rating
             };
            // console.log(review);
             const url = `http://localhost:5000/review`;
@@ -68,7 +68,7 @@ const {
 
 
   return (
-    <div className=" flex flex-col mx-auto my-10  w-96 space-y-6 ">
+    <div className="  flex flex-col mx-auto mt-14 px-4  w-96 space-y-6 ">
       <h2 className="text-2xl">Add Your Review</h2>
       <form onSubmit={handleSubmit(onSubmit)} c>
         <div className="form-control w-full max-w-xs ">
@@ -99,14 +99,15 @@ const {
           <label className="label">
             <span className="label-text">Your Review</span>
           </label>
-          <input
+          <textarea
             type="text"
             placeholder="Your Review"
-            className="input input-bordered w-full max-w-xs"
+            className="input input-bordered w-full max-w-xs h-32"
             {...register("description", {
               required: {
                 value: true,
                 message: "Review is Required",
+              
               },
             })}
           />
@@ -124,7 +125,7 @@ const {
             <span className="label-text">Your rating</span>
           </label>
           <input
-            type="text"
+            type="number"
             placeholder="Your Rating"
             className="input input-bordered w-full max-w-xs"
             {...register("rating",{
