@@ -15,6 +15,8 @@ const Purchase = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
+   
+
     const url = `http://localhost:5000/order`;
     fetch(url, {
       method: "POST",
@@ -43,15 +45,16 @@ const Purchase = () => {
         <p className="text-justify mx-3 mb-2">{service.description}</p>
 
         <h4 className=" mx-3 mb-3 text-lg">
-          Minimum Order Size: <span className="font-bold ">{service.minimum}</span>
-        </h4> 
+          Minimum Order Size:{" "}
+          <span className="font-bold ">{service.minimum}</span>
+        </h4>
         <h4 className=" mx-3 mb-3 text-lg">
           Total Available:
           <span className="font-bold ">{service.quantity}</span>
         </h4>
 
         <form
-          className=" h-screen flex flex-col mx-auto my-10  w-96 space-y-6 "
+          className=" h-full flex flex-col mx-auto my-10  w-96 space-y-6 "
           onSubmit={handleSubmit(onSubmit)}
         >
           <input
@@ -59,7 +62,6 @@ const Purchase = () => {
             placeholder="Tools Name"
             {...register("tools")}
             value={service.name}
-            
           />
 
           <input
@@ -67,7 +69,6 @@ const Purchase = () => {
             placeholder="User Name"
             {...register("username", { required: true, maxLength: 50 })}
             value={user.displayName}
-            
           />
           <input
             className="border-2 border-sky-700 rounded p-2 "
@@ -80,13 +81,13 @@ const Purchase = () => {
           <input
             className="border-2 border-sky-700 rounded p-2"
             placeholder="Address"
-          type="text"
+            type="text"
             {...register("address", { required: true, maxLength: 100 })}
           />
           <input
             className="border-2 border-sky-700 rounded p-2"
             placeholder="Phone Number"
-          type="text"
+            type="text"
             {...register("phone", { required: true, maxLength: 50 })}
           />
           <input
@@ -94,7 +95,6 @@ const Purchase = () => {
             placeholder="price"
             {...register("price")}
             value={service.price}
-           
           />
 
           <input
@@ -119,12 +119,22 @@ const Purchase = () => {
             })}
           />
 
-          <input
-            className="btn btn-outline-primary"
-            type="submit"
-            value="Purchase"
-            disabled={disabled}
-          />
+          {service.quantity <= 0 ? (
+            <input
+              className="btn btn-outline-primary"
+              type="submit"
+              value="Sold Out"
+              disabled={true}
+             
+            />
+          ) : (
+            <input
+              className="btn btn-outline-primary"
+              type="submit"
+              value="Purchase"
+              disabled={disabled}
+            />
+          )}
         </form>
       </div>
     </div>
