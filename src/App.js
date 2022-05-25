@@ -16,6 +16,7 @@ import Dashboard from "./components/Pages/Dashboard/Dashboard";
 import Profile from "./components/Pages/Dashboard/Profile";
 import MyOrder from "./components/Pages/Dashboard/MyOrder";
 import AddReview from "./components/Pages/Dashboard/AddReview";
+import Payment from "./components/Pages/Dashboard/Payment";
 
 
 
@@ -43,6 +44,7 @@ function App() {
             <Route index={'dashboard'} element={<MyOrder />} />
             <Route path='addreview' element={<AddReview />} />
             <Route path='profile' element={<Profile />} />
+            <Route path='payment/:id' element={<Payment />} />
 
           </Route>
 

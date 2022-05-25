@@ -16,9 +16,10 @@ const Purchase = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
+    const total=parseFloat(data.quantity)*parseFloat(price);
     const order = { 
       name: name,
-      price: price,
+      price: total,
       email: user.email,
     userName: user.displayName,
       address:data.address,
@@ -33,23 +34,20 @@ const Purchase = () => {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify(order),
     }).then(() => {
       //console.log(order);
       toast.success("Item Added Successfully");
       reset();
-       
-      });
+    });
      
   };
 
   return (
     <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-10 my-12 ">
-      <div className=" mx-auto my-auto">
-        <img src={img} alt="" />
-      </div>
-      <div className="mx-auto ">
+      <div className=" mx-auto ">
         <h1 className="text-2xl my-4 font-bold text-center">
           Tool Name : {name}
         </h1>
@@ -63,79 +61,86 @@ const Purchase = () => {
           Total Available:
           <span className="font-bold "> {quantity}</span>
         </h4>
-
-        <form
-          className=" h-full flex flex-col mx-auto my-10  w-96 space-y-6 "
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          
-         
-
-          <input
-            className="input input-bordered input-secondary w-full max-w-lg "
-            placeholder="User Name"
-            {...register("username", { required: true, maxLength: 50 })}
-            value={user.displayName}
-          />
-          <input
-            className="input input-bordered input-secondary w-full max-w-lg"
-            placeholder="Email"
-            {...register("email", { required: true, maxLength: 50 })}
-            value={user?.email}
-          />
-
-          <input
-            className="input input-bordered input-secondary w-full max-w-lg"
-            placeholder="Address"
-            type="text"
-            {...register("address", { required: true, maxLength: 100 })}
-          />
-          <input
-            className="input input-bordered input-secondary w-full max-w-lg"
-            placeholder="Phone Number"
-            type="text"
-            {...register("phone", { required: true, maxLength: 50 })}
-          />
-        
-
-          <input
-            className="input input-bordered input-secondary w-full max-w-lg "
-            placeholder="Quantity"
-            type="number"
-            {...register("quantity", {
-              onChange: (e) => {
-                const value = e.target.value;
-
-                if (value > quantity) {
-                  toast.error("You cannot order more than " + quantity);
-
-                  setDisable(true);
-                } else if (value < minimum) {
-                  toast.error("You cannot order less than " + minimum);
-                  setDisable(true);
-                } else {
-                  setDisable(false);
-                }
-              },
-            })}
-          />
-
-          {service.quantity <= 0 ? (
+        <h4 className=" mx-3 mb-3 text-lg">
+          Per Unit Price:
+          <span className="font-bold "> {price}</span>
+        </h4>
+        <img className="mt-6" src={img} alt="" />
+      </div>
+      <div className=" ">
+        <div className="card card-compact w-full mx-8 py-10 bg-base-100 shadow-xl">
+          <h1 className="text-3xl font-bold text-center">
+            Fill The Form To Purchase
+          </h1>
+          <form
+            className="  flex flex-col mx-auto my-10  w-96 space-y-6 "
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <input
-              className="btn btn-outline text-black btn-secondary"
-              type="submit"
-              value="Sold Out"
-              disabled={true}
+              className="input input-bordered input-secondary w-full max-w-lg "
+              placeholder="User Name"
+              {...register("username", { required: true, maxLength: 50 })}
+              value={user.displayName}
             />
-          ) : (
             <input
-              className="btn btn-outline text-white btn-secondary"
-              type="submit"
-              value="Purchase"
-              disabled={disabled}
+              className="input input-bordered input-secondary w-full max-w-lg"
+              placeholder="Email"
+              {...register("email", { required: true, maxLength: 50 })}
+              value={user?.email}
             />
-          )}
-        </form>
+
+            <input
+              className="input input-bordered input-secondary w-full max-w-lg"
+              placeholder="Address"
+              type="text"
+              {...register("address", { required: true, maxLength: 100 })}
+            />
+            <input
+              className="input input-bordered input-secondary w-full max-w-lg"
+              placeholder="Phone Number"
+              type="text"
+              {...register("phone", { required: true, maxLength: 50 })}
+            />
+
+            <input
+              className="input input-bordered input-secondary w-full max-w-lg "
+              placeholder="Quantity"
+              type="number"
+              {...register("quantity", {
+                onChange: (e) => {
+                  const value = e.target.value;
+
+                  if (value > quantity) {
+                    toast.error("You cannot order more than " + quantity);
+
+                    setDisable(true);
+                  } else if (value < minimum) {
+                    toast.error("You cannot order less than " + minimum);
+                    setDisable(true);
+                  } else {
+                    setDisable(false);
+                  }
+                },
+              })}
+            />
+
+            {service.quantity <= 0 ? (
+              <input
+                className="btn btn-outline text-black btn-secondary"
+                type="submit"
+                value="Sold Out"
+                disabled={true}
+              />
+            ) : (
+              <input
+                className="btn btn-outline text-white btn-secondary"
+                type="submit"
+                value="Purchase"
+                disabled={disabled}
+              />
+            )}
+          </form>
+        </div>
       </div>
     </div>
   );
