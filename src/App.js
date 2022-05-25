@@ -17,6 +17,8 @@ import Profile from "./components/Pages/Dashboard/Profile";
 import MyOrder from "./components/Pages/Dashboard/MyOrder";
 import AddReview from "./components/Pages/Dashboard/AddReview";
 import Payment from "./components/Pages/Dashboard/Payment";
+import Blogs from "./components/Pages/Blogs/Blogs";
+import MyPortfolio from "./components/Pages/MyPortfolio/MyPortfolio";
 
 
 
@@ -31,6 +33,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/thank" element={<ThankYou />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/portfolio" element={<MyPortfolio />} />
         
           <Route
             path="/services/:serviceId"
