@@ -39,7 +39,7 @@ const Purchase = () => {
       body: JSON.stringify(order),
     }).then(() => {
       //console.log(order);
-      toast.success("Item Added Successfully");
+      toast.success("Item Added Successfully. Go to Dashboard for the payment.");
       reset();
     });
      

@@ -10,7 +10,7 @@ const OrderRow = ({ index, order, setDeleteItem }) => {
       <td>{order.phone}</td>
       <td>{order.quantity}</td>
 
-      <td>{order.price}</td>
+      <td>${order.price}</td>
       <td>
         <td>
           {!order.paid ? (

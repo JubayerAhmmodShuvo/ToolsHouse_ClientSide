@@ -8,12 +8,13 @@ import Modal from './Modal';
 import OrderRow from './OrderRow';
 
  const MyOrder = () => {
-    const [user] = useAuthState(auth);
+    const [user,isLoading] = useAuthState(auth);
     const [order, setOrders] = useState([]);
     const [deleteItem, setDeleteItem] = useState(null);
     const [reload, setReload] = useState(false);
 
     const navigate = useNavigate();
+
 
     useEffect(() => {
         if (user) {
@@ -41,6 +42,10 @@ import OrderRow from './OrderRow';
                 })
         }
     }, [navigate, user, reload])
+   
+   if (isLoading) {
+     return <Loading />;
+   }
 
 
     return (

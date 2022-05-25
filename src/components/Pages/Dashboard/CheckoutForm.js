@@ -71,7 +71,7 @@ const navigate = useNavigate();
       setTransactionId(paymentIntent.id);
       
       setSuccess("Congrats! Your payment is completed.");
-      
+      navigate("/dashboard");
 
       
       const payment = {
@@ -93,7 +93,7 @@ const navigate = useNavigate();
         });
       
     }
-    navigate("/dashboard");
+    
   };
   return (
     <>
@@ -114,13 +114,15 @@ const navigate = useNavigate();
             },
           }}
         />
-        <button
-          className="btn btn-success btn-sm mt-4"
-          type="submit"
-          disabled={!stripe || !clientSecret || success}
-        >
-          Pay
-        </button>
+        <div className="flex flex-col justify-items-center ">
+          <button
+            className="btn btn-success btn-sm mt-16 "
+            type="submit"
+            disabled={!stripe || !clientSecret || success}
+          >
+            Pay
+          </button>
+        </div>
       </form>
       {cardError && <p className="text-red-500">{cardError}</p>}
       {success && (

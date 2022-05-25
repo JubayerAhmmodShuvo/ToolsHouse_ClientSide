@@ -26,20 +26,31 @@ const Modal = ({ deleteItem, setDeleteItem, setReload }) => {
     }
 
     return (
-        <div>
-
-            <input type="checkbox" id="my-modal" class="modal-toggle" />
-            <div class="modal">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg">Want to delete {name} ?</h3>
-                    <p class="py-4">Once you delete, It will remove this item permanently. So be Careful!</p>
-                    <div class="modal-action">
-                        <label onClick={() => handleDeleteBtn()} class="btn btn-xs btn-error">Delete</label>
-                        <label for="my-modal" class="btn btn-xs">Cancel</label>
-                    </div>
-                </div>
+      <div>
+        <input type="checkbox" id="my-modal" class="modal-toggle" />
+        <div class="modal">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">
+              Are you sure to cancel order of <span className="text-secondary" >{name}</span> ?
+            </h3>
+            <p class="py-4">
+              Once you delete, It will remove this item permanently. So be
+              Careful!
+            </p>
+            <div class="modal-action">
+              <label
+                onClick={() => handleDeleteBtn()}
+                class="btn btn-xs btn-error"
+              >
+                Delete
+              </label>
+              <label for="my-modal" class="btn btn-xs">
+                Cancel
+              </label>
             </div>
+          </div>
         </div>
+      </div>
     );
 };
 

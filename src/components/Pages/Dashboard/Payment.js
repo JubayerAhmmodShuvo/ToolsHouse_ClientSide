@@ -30,7 +30,7 @@ const Payment = () => {
     }
   
   return (
-    <div className="grid lg:grid-cols-2 gap-12 mt-32 h-52">
+    <div className="grid lg:grid-cols-2 gap-12 mt-32 ">
       <div class="card w-50 h-full  bg-base-100 shadow-xl  ">
         <div class="card-body ">
           <p className="text-success font-bold mx-auto">Hello, {order.userName}</p>
@@ -45,7 +45,7 @@ const Payment = () => {
           </p>
         </div>
       </div>
-       <div class="card flex-shrink-0 w-50  shadow-2xl bg-base-100 ">
+       <div class="card flex-shrink-0 w-50  shadow-2xl bg-base-100 p-6 ">
         <div class="card-body">
           <Elements stripe={stripePromise}>
             <CheckoutForm order={order} />
