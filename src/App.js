@@ -21,6 +21,7 @@ import MyPortfolio from "./components/Pages/MyPortfolio/MyPortfolio";
 
 import MakeAdmin from "./components/Pages/Dashboard/MakeAdmin";
 import AddProduct from "./components/Pages/Dashboard/AddProduct";
+import RequireAdmin from "./components/Pages/RequireAuth/RequireAdmin";
 
 
 
@@ -51,8 +52,22 @@ function App() {
             <Route path="addreview" element={<AddReview />} />
             <Route path="profile" element={<Profile />} />
             <Route path="payment/:id" element={<Payment />} />
-            <Route path="makeAdmin" element={<MakeAdmin />} />
-            <Route path="addNewProduct" element={<AddProduct />} />
+            <Route
+              path="makeAdmin"
+              element={
+                <RequireAdmin>
+                  <MakeAdmin />
+                </RequireAdmin>
+              }
+            />
+            <Route
+              path="addNewProduct"
+              element={
+                <RequireAdmin>
+                  <AddProduct />
+                </RequireAdmin>
+              }
+            />
           </Route>
 
           <Route path="*" element={<NotFound />} />

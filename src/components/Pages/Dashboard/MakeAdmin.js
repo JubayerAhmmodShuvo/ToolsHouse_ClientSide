@@ -28,13 +28,13 @@ const MakeAdmin = () => {
             <tr>
               <th></th>
               <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Role</th>
+              
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
-              <AdminRow key={user._id} user={user} refetch={refetch}></AdminRow>
+            {users.map((user,index) => (
+              <AdminRow key={user._id} index={index} user={user} refetch={refetch}></AdminRow>
             ))}
           </tbody>
         </table>
