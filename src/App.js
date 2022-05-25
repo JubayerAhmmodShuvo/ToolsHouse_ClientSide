@@ -18,11 +18,12 @@ import AddReview from "./components/Pages/Dashboard/AddReview";
 import Payment from "./components/Pages/Dashboard/Payment";
 import Blogs from "./components/Pages/Blogs/Blogs";
 import MyPortfolio from "./components/Pages/MyPortfolio/MyPortfolio";
-
+import ForgotPass from "./components/Pages/Login/ForgotPass";
 import MakeAdmin from "./components/Pages/Dashboard/MakeAdmin";
 import AddProduct from "./components/Pages/Dashboard/AddProduct";
 import RequireAdmin from "./components/Pages/RequireAuth/RequireAdmin";
-import ForgotPass from "./components/Pages/Login/ForgotPass";
+import ManageAllOrder from "./components/Pages/Dashboard/ManageAllOrder";
+import ManageProduct from "./components/Pages/Dashboard/ManageProduct";
 
 
 
@@ -59,6 +60,22 @@ function App() {
               element={
                 <RequireAdmin>
                   <MakeAdmin />
+                </RequireAdmin>
+              }
+            />
+            <Route
+              path="manageAllOrder"
+              element={
+                <RequireAdmin>
+                  <ManageAllOrder />
+                </RequireAdmin>
+              }
+            />
+            <Route
+              path="manageProduct"
+              element={
+                <RequireAdmin>
+                  <ManageProduct />
                 </RequireAdmin>
               }
             />
