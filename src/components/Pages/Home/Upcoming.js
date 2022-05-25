@@ -2,10 +2,9 @@ import React from 'react';
 
 const Upcoming = () => {
   return (
-    <div className="mb-32">
+    <div className="my-32 ">
       <h1 className="text-4xl font-serif font-bold my-20 text-center text-secondary">
-        Upcoming Products
-      </h1>
+        Upcoming Services   </h1>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-11 ">
         <div>
           <div class="card card-compact w-full h-full bg-base-100 shadow-xl">
