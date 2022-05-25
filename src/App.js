@@ -22,6 +22,7 @@ import MyPortfolio from "./components/Pages/MyPortfolio/MyPortfolio";
 import MakeAdmin from "./components/Pages/Dashboard/MakeAdmin";
 import AddProduct from "./components/Pages/Dashboard/AddProduct";
 import RequireAdmin from "./components/Pages/RequireAuth/RequireAdmin";
+import ForgotPass from "./components/Pages/Login/ForgotPass";
 
 
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="/thank" element={<ThankYou />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/portfolio" element={<MyPortfolio />} />
+          <Route path="/forgotpass" element={<ForgotPass />} />
 
           <Route
             path="/services/:serviceId"
