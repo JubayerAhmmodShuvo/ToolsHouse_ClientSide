@@ -14,7 +14,7 @@ const ForgotPass = () => {
   }, [sending, email]);
   useEffect(() => {
     if (error) {
-      toast("Enter an Email address");
+      toast.error("Enter an Email address");
     }
   }, [error]);
 
