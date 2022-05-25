@@ -6,7 +6,7 @@ const SingleReview = ({ review }) => {
   return (
     <div >
       
-      <div class="card w-96 h-full bg-base-100 shadow-xl">
+      <div class="card w-full h-full bg-base-100 shadow-xl">
         <div class="avatar">
           <div class="w-40 mx-auto mt-12 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
             <img src={img} alt="d" />

@@ -3,13 +3,13 @@ import React from 'react';
 const Banner = () => {
   return (
     <>
-      <div className=" mt-12">
+      <div className=" mt-12 ">
         <h1 className="text-3xl font-semibold italic text-center text-emerald-700">
           Our Prorities <span className="text-red-500">!</span>
         </h1>
         <hr className="w-1/6 border-1 mx-auto mt-4 border-emerald-800" />
       </div>
-      <div className="my-20">
+      <div className="my-20  ">
         <div className="carousel w-full h-96 my-8">
           <div id="item1" className="carousel-item w-full">
             <img

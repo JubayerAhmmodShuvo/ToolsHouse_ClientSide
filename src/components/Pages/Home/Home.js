@@ -6,7 +6,7 @@ import Summary from './Summary';
 
 const Home = () => {
   return (
-    <div>
+    <div  >
       <Banner />
       <Services />
       <Summary />
