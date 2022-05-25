@@ -16,7 +16,7 @@ const Modal = ({ deleteItem, setDeleteItem, setReload }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount) {
-                    toast.success({name} + " has been deleted");
+                    toast.success( `${name} has been deleted`);
 
                     setDeleteItem(null);
                     setReload(false)
