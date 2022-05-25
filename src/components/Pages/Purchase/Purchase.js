@@ -16,7 +16,8 @@ const Purchase = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
-    const total=parseFloat(data.quantity)*parseFloat(price);
+    const amount = parseFloat(data.quantity) * parseFloat(price);
+    const total=parseFloat(amount).toFixed(2);
     const order = { 
       name: name,
       price: total,

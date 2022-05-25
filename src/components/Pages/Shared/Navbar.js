@@ -9,6 +9,8 @@ import auth from "../../../firebase.init";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
+  console.log(user);
+  
   const navigate = useNavigate();
   const logout = () => {
     signOut(auth);
@@ -32,8 +34,12 @@ const Navbar = () => {
       {user && (
         <li>
           <Link to="/dashboard">Dashboard</Link>
+           <Link to=" ">{user?.displayName}</Link>
         </li>
       )}
+      
+       
+     
 
       <li>
         {user ? (
