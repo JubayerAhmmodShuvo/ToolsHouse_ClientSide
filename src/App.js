@@ -20,6 +20,7 @@ import Blogs from "./components/Pages/Blogs/Blogs";
 import MyPortfolio from "./components/Pages/MyPortfolio/MyPortfolio";
 
 import MakeAdmin from "./components/Pages/Dashboard/MakeAdmin";
+import AddProduct from "./components/Pages/Dashboard/AddProduct";
 
 
 
@@ -50,7 +51,8 @@ function App() {
             <Route path="addreview" element={<AddReview />} />
             <Route path="profile" element={<Profile />} />
             <Route path="payment/:id" element={<Payment />} />
-            <Route path="makeadmin" element={<MakeAdmin />} />
+            <Route path="makeAdmin" element={<MakeAdmin />} />
+            <Route path="addNewProduct" element={<AddProduct />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />
