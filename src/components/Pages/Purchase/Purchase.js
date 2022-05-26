@@ -65,45 +65,45 @@ const Purchase = () => {
           Per Unit Price:
           <span className="font-bold "> {price}</span>
         </h4>
-        <img className="mt-6" src={img} alt="" />
+        <img className="mt-6 w-96" src={img} alt="" />
       </div>
-      <div className=" ">
-        <div className="card card-compact w-full mx-8 py-10 bg-base-100 shadow-xl">
+      <div className="w-96 mx-auto ">
+        <div className="card card-compact w-96 py-10 bg-base-100 shadow-xl">
           <h1 className="text-3xl font-bold text-center">
             Fill The Form To Purchase
           </h1>
           <form
-            className="  flex flex-col mx-auto my-10  w-96 space-y-6 "
+            className="  flex flex-col mx-auto my-10  w-72 space-y-6 "
             onSubmit={handleSubmit(onSubmit)}
           >
             <input
-              className="input input-bordered input-secondary w-full max-w-lg "
+              className="input input-bordered input-secondary w-72 max-w-lg "
               placeholder="User Name"
               {...register("username", { required: true, maxLength: 50 })}
               value={user?.displayName}
             />
             <input
-              className="input input-bordered input-secondary w-full max-w-lg"
+              className="input input-bordered input-secondary w-72 max-w-lg"
               placeholder="Email"
               {...register("email", { required: true, maxLength: 50 })}
               value={user?.email}
             />
 
             <input
-              className="input input-bordered input-secondary w-full max-w-lg"
+              className="input input-bordered input-secondary w-72 max-w-lg"
               placeholder="Address"
               type="text"
               {...register("address", { required: true, maxLength: 100 })}
             />
             <input
-              className="input input-bordered input-secondary w-full max-w-lg"
+              className="input input-bordered input-secondary w-72 max-w-lg"
               placeholder="Phone Number"
               type="text"
               {...register("phone", { required: true, maxLength: 50 })}
             />
 
             <input
-              className="input input-bordered input-secondary w-full max-w-lg "
+              className="input input-bordered input-secondary w-72 max-w-lg "
               placeholder="Quantity"
               type="number"
               {...register("quantity", {
@@ -133,7 +133,7 @@ const Purchase = () => {
               />
             ) : (
               <input
-                className="btn btn-outline text-white btn-secondary"
+                className="btn btn-outline w-72 text-white btn-secondary"
                 type="submit"
                 value="Purchase"
                 disabled={disabled}
