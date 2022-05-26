@@ -9,6 +9,7 @@ import Upcoming from './Upcoming';
 const Home = () => {
   return (
     <div  >
+      
       <Banner />
       <Services />
       <Upcoming />

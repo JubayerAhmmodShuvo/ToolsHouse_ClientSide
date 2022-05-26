@@ -3,7 +3,7 @@ import React from 'react';
 const Upcoming = () => {
   return (
     <div className="my-32 ">
-      <h1 className="text-4xl font-serif font-bold my-20 text-center text-secondary">
+      <h1 className="text-4xl font-serif font-bold my-32 text-center text-secondary">
         Upcoming Services   </h1>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-11 ">
         <div>

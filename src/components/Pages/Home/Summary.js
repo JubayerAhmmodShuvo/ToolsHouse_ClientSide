@@ -6,7 +6,7 @@ import tools from "../../../images//tools.png"
 
 const Summary = () => {
   return (
-    <div className="my-36">
+    <div className="my-48">
       <div className=" ">
         <p className=" text-2xl font-semibold mb-4 font-serif   text-center ">
           WE WORK HARD, WE PLAY HARD
