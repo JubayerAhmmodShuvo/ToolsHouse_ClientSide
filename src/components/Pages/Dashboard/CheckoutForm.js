@@ -71,7 +71,7 @@ const navigate = useNavigate();
       setTransactionId(paymentIntent.id);
       
       setSuccess("Congrats! Your payment is completed.");
-      navigate("/myOrder");
+      navigate("/dashboard/myOrder");
 
       
       const payment = {

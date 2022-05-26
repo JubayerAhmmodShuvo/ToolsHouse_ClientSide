@@ -24,11 +24,8 @@ const Profile = () => {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       })
-        .then((res) => {
-          return res.json();
-        })
+        .then((res) => res.json())
         .then((data) => {
-          
           setData(data);
         });
     }
