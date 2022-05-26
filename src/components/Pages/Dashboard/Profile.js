@@ -3,9 +3,10 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import Loading from '../Loading/Loading';
 
 const Profile = () => {
-  const [user] = useAuthState(auth);
+  const [user,isLoading] = useAuthState(auth);
   const [data, setData] = useState({});
   const {
     register,
@@ -13,6 +14,7 @@ const Profile = () => {
     handleSubmit,
     reset,
   } = useForm();
+  
 
   useEffect(() => {
     if (user) {
@@ -32,7 +34,9 @@ const Profile = () => {
     }
   }, [user]);
   
-  
+  if (isLoading) {
+    return <Loading />;
+  }
 
   const onSubmit = (data) => {
     const profileInfo = {

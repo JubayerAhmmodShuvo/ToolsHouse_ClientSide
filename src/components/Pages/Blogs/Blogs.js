@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Blogs = () => {
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 mb-24">
       <div className=" bg-emerald-50 mx-6 rounded p-8">
         <h1 className="text-2xl font-semibold ">
           1. How will you improve the performance of a React Application?
@@ -76,7 +76,16 @@ const Blogs = () => {
           have const [products, setProducts] = useState([]). Why you do not set
           products = [...] instead, you use the setProducts ?
         </h1>
-        <p className="text-lg text-justify mx-4"></p>
+        <p className="text-lg text-justify mx-4 p-6">
+          Hook is a function that lets you access state without using a class
+          component. Hooks are a more natural way of thinking about React. It
+          helps us to write cleaner code and we donot need to use the class
+          component.We write like this const [state, setState] = useState(initialState);. The useState hook The reason we dont update the state is
+          that if we update it directly it will not change the state
+          immediately.Then it will create pending state and to access it later
+          it will give only the present value.Thats why we dont set the data
+          directly to a state.
+        </p>
       </div>
       <div className="bg-emerald-50 mx-6 rounded p-8">
         <h1 className="text-2xl font-semibold  ">
@@ -84,13 +93,38 @@ const Blogs = () => {
           description, etc. How will you implement a search to find products by
           name?
         </h1>
-        <p className="text-lg text-justify mx-4"></p>
+        <p className="text-lg text-justify mx-4 p-6">
+          The filter method is a powerful tool for filtering arrays in
+          JavaScript. We can use the filter method to filter the array of
+          products by name. We know that filter method has several components to
+          its syntax. avaScript filter() does not affect the initial array. It
+          applies the callback function to every element to create a new
+          collection with filtered elements. The JavaScript array filter
+          function is closely related to map, push and length methods. These
+          functions will give you more control over your arrays and contribute
+          to the production of shorter code.
+        </p>
       </div>
-      <div className="bg-emerald-50 mx-6 rounded p-8">
+      <div className="bg-emerald-50 mx-6 rounded p-8 ">
         <h1 className="text-2xl font-semibold  ">
           6. What is a unit test? Why should write unit tests?
         </h1>
-        <p className="text-lg text-justify mx-4"></p>
+        <p className="text-lg text-justify mx-4 p-6">
+          Unit test involves testing individual components of the software
+          program or application. The main purpose behind this is to check that
+          all the individual parts are working as intended. A unit is known as
+          the smallest possible component of software that can be tested. The
+          main objective of unit testing is to ensure that each individual part
+          is working well and as it’s supposed to work. The entire system will
+          only be able to work well if the individual parts are working well.
+          Unit testing is performed by the software developers themselves.
+          Sometimes, independent software testers also perform these tests. The
+          workflow of unit testing in software testing usually follows this
+          framework: Create the test cases, Review or rework,, Baseline Execute
+          test cases. Unit test makes the process agile, maintain the quality of
+          code, finds software bugs easily,for design,debuggin and also it
+          reduces the costs.
+        </p>
       </div>
     </div>
   );
