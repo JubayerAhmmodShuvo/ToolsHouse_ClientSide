@@ -47,6 +47,7 @@ const ManageAllOrder = () => {
                 order={order}
                 key={order._id}
                 index={index}
+                refetch={refetch}
                 setDeletingOrder={setDeletingOrder}
               ></AllOrders>
             ))}

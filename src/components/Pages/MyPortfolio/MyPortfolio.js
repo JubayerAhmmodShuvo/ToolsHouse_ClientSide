@@ -86,7 +86,7 @@ const MyPortfolio = () => {
                   <img src={Todo} alt="Shoes" />
                 </figure>
                 <div class="card-body">
-                  <p>Todo App</p>
+                  <p className="text-3xl text-white">Todo App</p>
                   <div class="card-actions justify-end">
                     <a
                       className="btn btn-primary"
@@ -103,11 +103,11 @@ const MyPortfolio = () => {
                 <img src={C} alt="Shoes" />
               </figure>
               <div class="card-body">
-                <p>Restaurent Management</p>
+                <p className="text-3xl text-white">Portfolio Website</p>
                 <div class="card-actions justify-end">
                   <a
                     className="btn btn-primary"
-                    href="https://github.com/JubayerAhmmodShuvo/Restaurent-OOP-Project"
+                    href="https://jubayerahmmodshuvo.github.io/portfolioproject/"
                   >
                     Code Link
                   </a>
@@ -119,7 +119,7 @@ const MyPortfolio = () => {
                 <img src={Book} alt="Shoes" />
               </figure>
               <div class="card-body">
-                <p>Book WareHouse</p>
+                <p className="text-3xl text-white">Book WareHouse</p>
                 <div class="card-actions justify-end">
                   <a
                     className="btn btn-primary"

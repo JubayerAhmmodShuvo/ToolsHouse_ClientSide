@@ -22,7 +22,12 @@ const Navbar = () => {
   const menuItem = (
     <>
       <li>
-        <Link to="/portfolio">My Portfolio</Link>
+        <Link className="mx-4" to="/blogs">
+          Blogs
+        </Link>
+      </li>
+      <li>
+        <Link to="/portfolio">Portfolio</Link>
       </li>
 
       {user && (
@@ -30,14 +35,14 @@ const Navbar = () => {
           <Link to="/dashboard">Dashboard</Link>
         </li>
       )}
-      <li >
-        <button className="btn btn-ghost ">{user?.displayName}</button>
-      </li>
+      <button className="btn btn-ghost ">{user?.displayName}</button>
       <li>
         {user ? (
-          <button onClick={logout} className="btn btn-ghost ">
-            SignOut
-          </button>
+          <>
+            <button onClick={logout} className="btn btn-ghost ">
+              SignOut
+            </button>
+          </>
         ) : (
           <Link to="/login">Login</Link>
         )}
@@ -76,6 +81,11 @@ const Navbar = () => {
             Squirrel tools
           </Link>
 
+          <Link className="mx-4 lg:block hidden   " to="/home">
+            Home
+          </Link>
+
+         
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0 ">{menuItem}</ul>
