@@ -20,7 +20,7 @@ const Summary = () => {
         <div>
           <div className="flex flex-col items-center justify-center">
             <img className="w-36" src={revenue} alt="" />
-            <h1 className="text-4xl font-extrabold text-center italic text-emerald-500   ">
+            <h1 className="text-5xl font-extrabold text-center italic text-emerald-500   ">
               120M
             </h1>
             <p className="font-bold p-2 text-lg mt-6 text-teal-500">
@@ -31,7 +31,7 @@ const Summary = () => {
         <div>
           <div className="flex flex-col items-center justify-center">
             <img className="w-36" src={customer} alt="" />
-            <h1 className="text-4xl font-extrabold text-center italic text-emerald-500  ">
+            <h1 className="text-5xl font-extrabold text-center italic text-emerald-500  ">
               120+
             </h1>
             <p className="font-bold p-2 text-lg mt-6 text-teal-500	">
@@ -42,7 +42,7 @@ const Summary = () => {
         <div>
           <div className="flex flex-col items-center justify-center">
             <img className="w-36" src={review} alt="" />
-            <h1 className="text-4xl font-extrabold text-center italic text-emerald-500  ">
+            <h1 className="text-5xl font-extrabold text-center italic text-emerald-500  ">
               33k+
             </h1>
             <p className="font-bold p-2 text-lg mt-6 text-teal-500">
@@ -53,7 +53,7 @@ const Summary = () => {
         <div>
           <div className="flex flex-col items-center justify-center">
             <img className="w-36" src={tools} alt="" />
-            <h1 className="text-4xl font-extrabold text-center  italic  text-emerald-500">
+            <h1 className="text-5xl font-extrabold text-center  italic  text-emerald-500">
               50+
             </h1>
             <p className="font-bold p-2 text-lg mt-6 text-teal-500">Tools</p>

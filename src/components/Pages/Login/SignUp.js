@@ -137,16 +137,17 @@ const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full mx-auto max-w-xs">
-             <input
-                                type="text"
-                                placeholder="Your Name"
-                                className="input input-bordered w-full max-w-xs"
-                                {...register("name", {
-                                    required: {
-                                        value: true,
-                                        message: 'Name is Required'
-                                    }
-                                })} />
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="input input-secondary input-bordered w-full max-w-xs"
+                {...register("name", {
+                  required: {
+                    value: true,
+                    message: "Name is Required",
+                  },
+                })}
+              />
               <label className="label">
                 {errors.name?.type === "required" && (
                   <span className="label-text-alt text-red-500">
@@ -160,7 +161,7 @@ const [updateProfile, updating, updateError] = useUpdateProfile(auth);
               <input
                 type="email"
                 placeholder="Your Email"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-secondary input-bordered w-full max-w-xs"
                 {...register("email", {
                   required: {
                     value: true,
@@ -189,7 +190,7 @@ const [updateProfile, updating, updateError] = useUpdateProfile(auth);
               <input
                 type="password"
                 placeholder="Password"
-                className="input input-bordered w-full max-w-xs"
+                className="input input-secondary input-bordered w-full max-w-xs"
                 {...register("password", {
                   required: {
                     value: true,
@@ -214,13 +215,11 @@ const [updateProfile, updating, updateError] = useUpdateProfile(auth);
                 )}
               </label>
             </div>
-            
-            
 
             {signInError}
             <div className="flex justify-center align-items-center mt-4">
               <input
-                className="btn w-full max-w-xs text-white"
+                className="btn  w-full max-w-xs text-white"
                 type="submit"
                 value="Sign Up"
               />

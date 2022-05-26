@@ -4,7 +4,7 @@ import ToolHouse from "../../../images/toolshouse.jpg"
 const Banner = () => {
   return (
     <>
-      <div className="mt-28 mb-44">
+      <div className="mt-32 mb-52">
         <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-16">
           <div className="mb-14 lg:mb-0">
             <img className="rounded" src={ToolHouse} alt="" />
