@@ -82,14 +82,14 @@ const Profile = () => {
             City:<span className="text-xl font-bold"> { data?.city}</span>
           </h1>
           <button className="btn btn-secondary">
-            <a href={data?.profile}>Linkdedin Link</a>
+            <a  target="_blank" href={data?.pofile}>Linkdedin Link</a>
           </button>
         </div>
         <div className="flex h-auto justify-center my-2">
           <div class="card w-full  bg-base-100 shadow-xl">
             <div class="card-body">
               <h1 className="text-3xl text-center text-secondary font-bold font-serif">
-                My Profile Form
+                Update Profile Form
               </h1>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div class="form-control w-full ">
@@ -208,7 +208,7 @@ const Profile = () => {
                 <input
                   className="btn btn-secondary w-full"
                   type="submit"
-                  value="add/update infromation"
+                  value="Add / Update"
                 />
               </form>
             </div>
