@@ -52,9 +52,9 @@ function App() {
             }
           />
           <Route path="dashboard" element={<Dashboard />}>
-            <Route index element={<MyOrder />} />
+            <Route path="myOrder" element={<MyOrder />} />
             <Route path="addreview" element={<AddReview />} />
-            <Route path="profile" element={<Profile />} />
+            <Route index  element={<Profile />} />
             <Route path="payment/:id" element={<Payment />} />
             <Route
               path="makeAdmin"
