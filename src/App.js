@@ -41,6 +41,7 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/portfolio" element={<MyPortfolio />} />
           <Route path="/forgotpass" element={<ForgotPass />} />
+          
 
           <Route
             path="/services/:serviceId"

@@ -76,13 +76,6 @@ const Navbar = () => {
             Squirrel tools
           </Link>
 
-          <Link className="mx-4" to="/home">
-            Home
-          </Link>
-
-          <Link className="mx-4" to="/blogs">
-            Blogs
-          </Link>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0 ">{menuItem}</ul>
