@@ -51,7 +51,7 @@ function App() {
             }
           />
           <Route path="dashboard" element={<Dashboard />}>
-            <Route index={"dashboard"} element={<MyOrder />} />
+            <Route index element={<MyOrder />} />
             <Route path="addreview" element={<AddReview />} />
             <Route path="profile" element={<Profile />} />
             <Route path="payment/:id" element={<Payment />} />

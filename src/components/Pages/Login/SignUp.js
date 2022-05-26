@@ -3,6 +3,7 @@ import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGithub,
   useSignInWithGoogle,
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { Link,  useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -29,7 +30,7 @@ const SignUp = () => {
   const [signInWithGoogle, googleUser, googleError] = useSignInWithGoogle(auth);
   const [signInWithGithub, githubUser, githubError] = useSignInWithGithub(auth);
   const [token] = useToken(user || googleUser || githubUser);
-
+const [updateProfile, updating, updateError] = useUpdateProfile(auth);
  
   let signInError;
 
@@ -55,6 +56,7 @@ const SignUp = () => {
     console.log(data);
      
        await createUserWithEmailAndPassword(data.email, data.password);
+         await updateProfile({ displayName: data.name });
         toast.success("User Created Successfully");
   };
 
@@ -135,17 +137,16 @@ const SignUp = () => {
 
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full mx-auto max-w-xs">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="input input-bordered w-full max-w-xs"
-                {...register("name", {
-                  required: {
-                    value: true,
-                    message: "Name is Required",
-                  },
-                })}
-              />
+             <input
+                                type="text"
+                                placeholder="Your Name"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("name", {
+                                    required: {
+                                        value: true,
+                                        message: 'Name is Required'
+                                    }
+                                })} />
               <label className="label">
                 {errors.name?.type === "required" && (
                   <span className="label-text-alt text-red-500">

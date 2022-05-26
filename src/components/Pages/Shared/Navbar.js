@@ -9,7 +9,7 @@ import auth from "../../../firebase.init";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
+
   
   const navigate = useNavigate();
   const logout = () => {
@@ -22,25 +22,17 @@ const Navbar = () => {
   const menuItem = (
     <>
       <li>
-        <Link to="/home">Home</Link>
-      </li>
-      <li>
-        <Link to="/blogs">Blogs</Link>
-      </li>
-      <li>
         <Link to="/portfolio">My Portfolio</Link>
       </li>
 
       {user && (
         <li>
           <Link to="/dashboard">Dashboard</Link>
-           <Link to=" ">{user?.displayName}</Link>
         </li>
       )}
-      
-       
-     
-
+      <li >
+        <button className="btn btn-ghost ">{user?.displayName}</button>
+      </li>
       <li>
         {user ? (
           <button onClick={logout} className="btn btn-ghost ">
@@ -83,7 +75,14 @@ const Navbar = () => {
           <Link to="/" className=" btn btn-ghost font-bold italic text-lg ">
             Squirrel tools
           </Link>
-         
+
+          <Link className="mx-4" to="/home">
+            Home
+          </Link>
+
+          <Link className="mx-4" to="/blogs">
+            Blogs
+          </Link>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0 ">{menuItem}</ul>

@@ -39,7 +39,7 @@ const Purchase = () => {
       },
       body: JSON.stringify(order),
     }).then(() => {
-      //console.log(order);
+      
       toast.success("Item Added Successfully. Go to Dashboard for the payment.");
       reset();
     });
@@ -81,7 +81,7 @@ const Purchase = () => {
               className="input input-bordered input-secondary w-full max-w-lg "
               placeholder="User Name"
               {...register("username", { required: true, maxLength: 50 })}
-              value={user.displayName}
+              value={user?.displayName}
             />
             <input
               className="input input-bordered input-secondary w-full max-w-lg"
