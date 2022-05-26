@@ -25,12 +25,17 @@
 * User can add review and admin can add products and also admin can delete the product.
 * Blogs contain some information of some question.
 * Portfolio contains some information about me.
+* Mongodb used for store the data.
+* Imagebb use for storing images.
 
 
 ## Technologies
 
 
 * HTML
+* Node.js
+* Express.js
+* Mongodb
 * CSS
 * React(Library)
 * Tailwind
