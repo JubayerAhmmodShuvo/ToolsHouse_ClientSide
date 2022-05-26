@@ -1,28 +1,28 @@
-import React, { useState } from 'react';
-import { useQuery } from 'react-query';
-import Loading from '../Loading/Loading';
-import DeleteConfirmModal from './DeleteConfirmModal';
-import ManageSingleProduct from './ManageSingleProduct';
+import React, { useState } from "react";
+import { useQuery } from "react-query";
+import Loading from "../Loading/Loading";
+import DeleteConfirmModal from "./DeleteConfirmModal";
+import ManageSingleProduct from "./ManageSingleProduct";
 
 const ManageProduct = () => {
-    const [deletingService, setDeletingService] = useState(null);
+  const [deletingService, setDeletingService] = useState(null);
 
-    const {
-      data: services,
-      isLoading,
-      refetch,
-    } = useQuery("services", () =>
-      fetch("https://polar-sierra-20396.herokuapp.com/services", {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }).then((res) => res.json())
-    );
+  const {
+    data: services,
+    isLoading,
+    refetch,
+  } = useQuery("services", () =>
+    fetch("https://polar-sierra-20396.herokuapp.com/services", {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
+  );
 
-    if (isLoading) {
-      return <Loading></Loading>;
-    }
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div>

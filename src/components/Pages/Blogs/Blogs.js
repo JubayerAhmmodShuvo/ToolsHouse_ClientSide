@@ -80,11 +80,12 @@ const Blogs = () => {
           Hook is a function that lets you access state without using a class
           component. Hooks are a more natural way of thinking about React. It
           helps us to write cleaner code and we donot need to use the class
-          component.We write like this const [state, setState] = useState(initialState);. The useState hook The reason we dont update the state is
-          that if we update it directly it will not change the state
-          immediately.Then it will create pending state and to access it later
-          it will give only the present value.Thats why we dont set the data
-          directly to a state.
+          component.We write like this const [state, setState] =
+          useState(initialState);. The useState hook The reason we dont update
+          the state is that if we update it directly it will not change the
+          state immediately.Then it will create pending state and to access it
+          later it will give only the present value.Thats why we dont set the
+          data directly to a state.
         </p>
       </div>
       <div className="bg-emerald-50 mx-6 rounded p-8">

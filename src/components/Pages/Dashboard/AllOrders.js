@@ -1,30 +1,26 @@
-import React from 'react';
-import { toast } from 'react-toastify';
+import React from "react";
+import { toast } from "react-toastify";
 
-
-const AllOrders = ({ order, setDeletingOrder, index,refetch }) => {
-  
-  const handleUpdateStatus = id => {
-     fetch(`https://polar-sierra-20396.herokuapp.com/order/${id}`, {
-       method: "PUT",
-       headers: {
-         "content-type": "application/json",
-       },
-      
-     })
-       .then((res) => res.json())
-       .then((data) => {
-         toast.success("Order status updated successfully");
-         refetch();
-       });
- 
+const AllOrders = ({ order, setDeletingOrder, index, refetch }) => {
+  const handleUpdateStatus = (id) => {
+    fetch(`https://polar-sierra-20396.herokuapp.com/order/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        toast.success("Order status updated successfully");
+        refetch();
+      });
   };
- 
+
   return (
     <tr>
       <th>{index + 1}</th>
       <td>{order.name}</td>
-     
+
       <td>{order.transactionId}</td>
       <td>{order.quantity}</td>
 
@@ -53,18 +49,20 @@ const AllOrders = ({ order, setDeletingOrder, index,refetch }) => {
         )}
       </td>
       <td>
-        { (order.paid && order.status!== true ) &&     (
+        {order.paid && order.status !== true && (
           <button
             onClick={() => {
               handleUpdateStatus(order._id);
-              console.log("clicking");
-         }}   className="btn btn-xs btn-secondary">Pending</button>
+              //  console.log("clicking");
+            }}
+            className="btn btn-xs btn-secondary"
+          >
+            Pending
+          </button>
         )}
-        {
-          (order.paid && order.status === true) && (
-            <div className="btn  btn-success btn-xs">Shipped</div>
-          )
-        }
+        {order.paid && order.status === true && (
+          <div className="btn  btn-success btn-xs">Shipped</div>
+        )}
       </td>
     </tr>
   );

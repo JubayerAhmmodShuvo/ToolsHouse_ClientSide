@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const OrderRow = ({ index, order, setDeleteItem }) => {
   return (
@@ -25,7 +25,6 @@ const OrderRow = ({ index, order, setDeleteItem }) => {
             <span className="text-error">Cancel</span>
           )}
         </td>
-       
       </td>
       <td>
         {order.price && !order.paid && (

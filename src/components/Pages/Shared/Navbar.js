@@ -4,19 +4,14 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 
-
-
-
 const Navbar = () => {
   const [user] = useAuthState(auth);
 
-  
   const navigate = useNavigate();
   const logout = () => {
     signOut(auth);
     localStorage.removeItem("accessToken");
     navigate("/");
-
   };
 
   const menuItem = (
@@ -84,8 +79,6 @@ const Navbar = () => {
           <Link className="mx-4 lg:block hidden   " to="/home">
             Home
           </Link>
-
-         
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0 ">{menuItem}</ul>

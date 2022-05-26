@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const ManageSingleProduct = ({ service,setDeletingService }) => {
-  const { name, img, description, price,quantity,minimum } = service;
+const ManageSingleProduct = ({ service, setDeletingService }) => {
+  const { name, img, description, price, quantity, minimum } = service;
   return (
     <div class="card card-compact w-full  bg-base-100 shadow-xl">
       <figure>
@@ -25,7 +25,7 @@ const ManageSingleProduct = ({ service,setDeletingService }) => {
         <p className="text-justify">{description}</p>
         <div class="card-actions justify-center my-3">
           <label
-            onClick={() => setDeletingService(service)  }
+            onClick={() => setDeletingService(service)}
             htmlFor="delete-confirm-modal"
             className="btn w-full  btn-error"
           >

@@ -10,8 +10,7 @@ const CheckoutForm = ({ order }) => {
   const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("");
   const [clientSecret, setClientSecret] = useState("");
-const navigate = useNavigate();
-  const { _id, price, name,userName,quantity,email} = order;
+  const { _id, price, name, userName, quantity, email } = order;
 
   useEffect(() => {
     fetch("https://polar-sierra-20396.herokuapp.com/create-payment-intent", {
@@ -51,7 +50,7 @@ const navigate = useNavigate();
     setCardError(error?.message || "");
     setSuccess("");
     setProcessing(true);
-  
+
     const { paymentIntent, error: intentError } =
       await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -69,11 +68,9 @@ const navigate = useNavigate();
     } else {
       setCardError("");
       setTransactionId(paymentIntent.id);
-      
-      setSuccess("Congrats! Your payment is completed.");
-      navigate("/dashboard/myOrder");
 
-      
+      setSuccess("Congrats! Your payment is completed.");
+
       const payment = {
         order: _id,
         transactionId: paymentIntent.id,
@@ -89,11 +86,8 @@ const navigate = useNavigate();
         .then((res) => res.json())
         .then((data) => {
           setProcessing(false);
-          
         });
-      
     }
-    
   };
   return (
     <>

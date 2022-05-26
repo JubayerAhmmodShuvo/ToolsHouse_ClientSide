@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
 import Mine from "../../../images/mine.jpg";
 import Todo from "../../../images/todo.png";
 import C from "../../../images/C.jpg";
 import Book from "../../../images/bookhouse.png";
-
 
 const MyPortfolio = () => {
   return (

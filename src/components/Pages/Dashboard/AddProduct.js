@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../../firebase.init';
+import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 import { useForm } from "react-hook-form";
-import { toast } from 'react-toastify';
-import Loading from '../Loading/Loading';
-import { useNavigate } from 'react-router-dom';
+import { toast } from "react-toastify";
+import Loading from "../Loading/Loading";
+import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
   const [user, isLoading] = useAuthState(auth);
@@ -28,7 +28,6 @@ const AddProduct = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-       
         if (result.success) {
           const img = result.data.url;
           const service = {
@@ -37,10 +36,9 @@ const AddProduct = () => {
             img: img,
             price: data.price,
             minimum: data.minimum,
-            quantity: data.quantity
-
+            quantity: data.quantity,
           };
-         
+
           const url = `https://polar-sierra-20396.herokuapp.com/services`;
           fetch(url, {
             method: "POST",
@@ -54,7 +52,7 @@ const AddProduct = () => {
               if (inserted.insertedId) {
                 toast.success("Product added successfully");
                 reset();
-                navigate('/');
+                navigate("/");
               } else {
                 toast.error("Failed to add the product");
               }
@@ -182,12 +180,10 @@ const AddProduct = () => {
           className="btn w-full max-w-xs text-white"
           type="submit"
           value="Add Product"
-         
         />
       </form>
     </div>
   );
 };
-
 
 export default AddProduct;

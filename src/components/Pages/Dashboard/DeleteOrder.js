@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { toast } from "react-toastify";
 
 const DeleteOrder = ({ deletingOrder, setDeletingOrder, refetch }) => {
@@ -12,7 +12,7 @@ const DeleteOrder = ({ deletingOrder, setDeletingOrder, refetch }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        //console.log(data);
         if (data.deletedCount) {
           toast.success(` ${name} is deleted.`);
           setDeletingOrder(null);

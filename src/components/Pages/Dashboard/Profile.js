@@ -44,7 +44,7 @@ const Profile = () => {
       number: data.number,
       profile: data.profile,
     };
-    console.log(profileInfo);
+   // console.log(profileInfo);
     const email = user?.email;
     if (email) {
       fetch(`https://polar-sierra-20396.herokuapp.com/userprofile/${email}`, {

@@ -12,22 +12,21 @@ const Purchase = () => {
   const [disabled, setDisable] = useState(false);
 
   const [service, setService] = useServiceDetails(serviceId);
-  const{name, description, price,img,minimum,quantity} = service;
+  const { name, description, price, img, minimum, quantity } = service;
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
     const amount = parseFloat(data.quantity) * parseFloat(price);
-    const total=parseFloat(amount).toFixed(2);
-    const order = { 
+    const total = parseFloat(amount).toFixed(2);
+    const order = {
       name: name,
       price: total,
       email: user.email,
-    userName: user.displayName,
-      address:data.address,
+      userName: user.displayName,
+      address: data.address,
       phone: data.phone,
-      quantity:data.quantity
-    }
-   
+      quantity: data.quantity,
+    };
 
     const url = `https://polar-sierra-20396.herokuapp.com/order`;
     fetch(url, {
@@ -39,11 +38,11 @@ const Purchase = () => {
       },
       body: JSON.stringify(order),
     }).then(() => {
-      
-      toast.success("Item Added Successfully. Go to Dashboard for the payment.");
+      toast.success(
+        "Item Added Successfully. Go to Dashboard for the payment."
+      );
       reset();
     });
-     
   };
 
   return (

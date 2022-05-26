@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useQuery } from 'react-query';
-import Loading from '../Loading/Loading';
-import AllOrders from './AllOrders';
-import DeleteOrder from './DeleteOrder';
+import React, { useState } from "react";
+import { useQuery } from "react-query";
+import Loading from "../Loading/Loading";
+import AllOrders from "./AllOrders";
+import DeleteOrder from "./DeleteOrder";
 
 const ManageAllOrder = () => {
-   const [deletingOrder, setDeletingOrder] = useState(null);
+  const [deletingOrder, setDeletingOrder] = useState(null);
 
   const {
     data: orders,
@@ -18,13 +18,11 @@ const ManageAllOrder = () => {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     }).then((res) => res.json())
-     
-   );
+  );
 
   if (isLoading) {
-    
-     return <Loading></Loading>;
-   }
+    return <Loading></Loading>;
+  }
   return (
     <div>
       <div class="overflow-x-auto">

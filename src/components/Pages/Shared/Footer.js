@@ -1,23 +1,20 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Footer = () => {
-  const navigate= useNavigate();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => { 
+  const handleSubmit = (e) => {
     e.preventDefault();
     const input = e.target.text.value;
     if (input.length <= 0) {
       toast.error("Please enter a valid email");
-    }
-     else {
+    } else {
       navigate(`/thank`);
       toast.success("Thank you for subscribing to our newsletter");
     }
-    
-   
-  }
+  };
   return (
     <div>
       <footer class="footer  p-10 bg-teal-50	  text-base-content">
