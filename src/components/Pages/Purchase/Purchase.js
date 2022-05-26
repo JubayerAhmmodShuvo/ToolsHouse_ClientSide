@@ -29,7 +29,7 @@ const Purchase = () => {
     }
    
 
-    const url = `http://localhost:5000/order`;
+    const url = `https://polar-sierra-20396.herokuapp.com/order`;
     fetch(url, {
       method: "POST",
       headers: {

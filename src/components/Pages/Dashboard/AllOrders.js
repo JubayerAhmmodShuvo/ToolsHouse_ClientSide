@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const AllOrders = ({ order, setDeletingOrder, index,refetch }) => {
   
   const handleUpdateStatus = id => {
-     fetch(`http://localhost:5000/order/${id}`, {
+     fetch(`https://polar-sierra-20396.herokuapp.com/order/${id}`, {
        method: "PUT",
        headers: {
          "content-type": "application/json",

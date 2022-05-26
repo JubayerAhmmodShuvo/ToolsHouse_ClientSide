@@ -12,7 +12,7 @@ const ManageAllOrder = () => {
     isLoading,
     refetch,
   } = useQuery("services", () =>
-    fetch("http://localhost:5000/orders", {
+    fetch("https://polar-sierra-20396.herokuapp.com/orders", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

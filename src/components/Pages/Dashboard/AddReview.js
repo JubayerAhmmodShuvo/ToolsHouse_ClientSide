@@ -37,7 +37,7 @@ const {
               rating: data.rating
             };
            // console.log(review);
-            const url = `http://localhost:5000/review`;
+            const url = `https://polar-sierra-20396.herokuapp.com/review`;
             fetch(url, {
               method: "POST",
               headers: {

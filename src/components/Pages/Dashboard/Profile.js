@@ -18,7 +18,7 @@ const Profile = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/userprofile/${user.email}`, {
+      fetch(`https://polar-sierra-20396.herokuapp.com/userprofile/${user.email}`, {
         method: "GET",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -50,7 +50,7 @@ const Profile = () => {
     console.log(profileInfo);
     const email = user?.email;
     if (email) {
-      fetch(`http://localhost:5000/userprofile/${email}`, {
+      fetch(`https://polar-sierra-20396.herokuapp.com/userprofile/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

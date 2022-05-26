@@ -41,7 +41,7 @@ const AddProduct = () => {
 
           };
          
-          const url = `http://localhost:5000/services`;
+          const url = `https://polar-sierra-20396.herokuapp.com/services`;
           fetch(url, {
             method: "POST",
             headers: {

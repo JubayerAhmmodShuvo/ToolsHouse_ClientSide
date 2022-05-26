@@ -6,7 +6,7 @@ const Modal = ({ deleteItem, setDeleteItem, setReload }) => {
 
     const { _id, name} = deleteItem;
     const handleDeleteBtn = () => {
-        fetch(`http://localhost:5000/order/${_id}`, {
+        fetch(`https://polar-sierra-20396.herokuapp.com/order/${_id}`, {
             method: 'DELETE',
           headers: {
               authorization: `Bearer ${localStorage.getItem("accessToken")}`,
