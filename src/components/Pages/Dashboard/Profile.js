@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../../firebase.init';
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import Loading from '../Loading/Loading';
+import Loading from "../Loading/Loading";
 
 const Profile = () => {
-  const [user,isLoading] = useAuthState(auth);
+  const [user, isLoading] = useAuthState(auth);
   const [data, setData] = useState({});
   const {
     register,
@@ -14,11 +14,10 @@ const Profile = () => {
     handleSubmit,
     reset,
   } = useForm();
-  
 
   useEffect(() => {
     if (user) {
-      fetch(`https://polar-sierra-20396.herokuapp.com/userprofile/${user.email}`, {
+      fetch(`https://tools-two-gold.vercel.app/userprofile/${user.email}`, {
         method: "GET",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -30,7 +29,7 @@ const Profile = () => {
         });
     }
   }, [user]);
-  
+
   if (isLoading) {
     return <Loading />;
   }
@@ -44,10 +43,10 @@ const Profile = () => {
       number: data.number,
       profile: data.profile,
     };
-   // console.log(profileInfo);
+    // console.log(profileInfo);
     const email = user?.email;
     if (email) {
-      fetch(`https://polar-sierra-20396.herokuapp.com/userprofile/${email}`, {
+      fetch(`https://tools-two-gold.vercel.app/userprofile/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -58,7 +57,7 @@ const Profile = () => {
         .then((data) => {
           toast.success("Profile updated successfully");
           reset();
-           window.location.reload(true);
+          window.location.reload(true);
         });
     }
   };
@@ -80,10 +79,12 @@ const Profile = () => {
             Phone:<span className="text-xl font-bold"> {data?.number}</span>
           </h1>
           <h1>
-            City:<span className="text-xl font-bold"> { data?.city}</span>
+            City:<span className="text-xl font-bold"> {data?.city}</span>
           </h1>
           <button className="btn btn-secondary">
-            <a  target="_blank" href={data?.pofile}>Linkdedin Link</a>
+            <a target="_blank" href={data?.pofile}>
+              Linkdedin Link
+            </a>
           </button>
         </div>
         <div className="flex h-auto justify-center my-2">
@@ -219,6 +220,5 @@ const Profile = () => {
     </div>
   );
 };
-
 
 export default Profile;

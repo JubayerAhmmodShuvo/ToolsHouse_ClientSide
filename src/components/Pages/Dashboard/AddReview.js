@@ -37,7 +37,7 @@ const AddReview = () => {
             rating: data.rating,
           };
           // console.log(review);
-          const url = `https://polar-sierra-20396.herokuapp.com/review`;
+          const url = `https://tools-two-gold.vercel.app/review`;
           fetch(url, {
             method: "POST",
             headers: {

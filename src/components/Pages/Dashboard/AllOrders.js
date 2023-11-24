@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 const AllOrders = ({ order, setDeletingOrder, index, refetch }) => {
   const handleUpdateStatus = (id) => {
-    fetch(`https://polar-sierra-20396.herokuapp.com/order/${id}`, {
+    fetch(`https://tools-two-gold.vercel.app/order/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

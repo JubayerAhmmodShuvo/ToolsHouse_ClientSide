@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const DeleteConfirmModal = ({ service, setDeletingService, refetch }) => {
   const { name, _id } = service;
   const handleDelete = () => {
-    fetch(`https://polar-sierra-20396.herokuapp.com/services/${_id}`, {
+    fetch(`https://tools-two-gold.vercel.app/services/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

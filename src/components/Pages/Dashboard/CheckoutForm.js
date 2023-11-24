@@ -13,11 +13,11 @@ const CheckoutForm = ({ order }) => {
   const { _id, price, name, userName, quantity, email } = order;
 
   useEffect(() => {
-    fetch("https://polar-sierra-20396.herokuapp.com/create-payment-intent", {
+    fetch("https://tools-two-gold.vercel.app/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
-         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: JSON.stringify({ price }),
     })
@@ -75,7 +75,7 @@ const CheckoutForm = ({ order }) => {
         order: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://polar-sierra-20396.herokuapp.com/order/${_id}`, {
+      fetch(`https://tools-two-gold.vercel.app/order/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

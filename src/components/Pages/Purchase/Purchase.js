@@ -28,7 +28,7 @@ const Purchase = () => {
       quantity: data.quantity,
     };
 
-    const url = `https://polar-sierra-20396.herokuapp.com/order`;
+    const url = `https://tools-two-gold.vercel.app/order`;
     fetch(url, {
       method: "POST",
       headers: {
