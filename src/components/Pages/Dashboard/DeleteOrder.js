@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const DeleteOrder = ({ deletingOrder, setDeletingOrder, refetch }) => {
   const { name, _id } = deletingOrder;
   const handleDelete = () => {
-    fetch(`https://tools-two-gold.vercel.app/orders/${_id}`, {
+    fetch(`https://tools-manufacturer-server-smoky.vercel.app/orders/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

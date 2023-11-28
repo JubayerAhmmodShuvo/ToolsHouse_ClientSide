@@ -28,7 +28,7 @@ const Purchase = () => {
       quantity: data.quantity,
     };
 
-    const url = `https://tools-two-gold.vercel.app/order`;
+    const url = `https://tools-manufacturer-server-smoky.vercel.app/order`;
     fetch(url, {
       method: "POST",
       headers: {

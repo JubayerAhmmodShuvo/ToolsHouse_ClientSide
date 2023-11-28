@@ -12,7 +12,7 @@ const ManageProduct = () => {
     isLoading,
     refetch,
   } = useQuery("services", () =>
-    fetch("https://tools-two-gold.vercel.app/services", {
+    fetch("https://tools-manufacturer-server-smoky.vercel.app/services", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

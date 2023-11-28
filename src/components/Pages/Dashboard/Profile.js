@@ -17,12 +17,15 @@ const Profile = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`https://tools-two-gold.vercel.app/userprofile/${user.email}`, {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      })
+      fetch(
+        `https://tools-manufacturer-server-smoky.vercel.app/userprofile/${user.email}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setData(data);
@@ -46,13 +49,16 @@ const Profile = () => {
     // console.log(profileInfo);
     const email = user?.email;
     if (email) {
-      fetch(`https://tools-two-gold.vercel.app/userprofile/${email}`, {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(profileInfo),
-      })
+      fetch(
+        `https://tools-manufacturer-server-smoky.vercel.app/userprofile/${email}`,
+        {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(profileInfo),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           toast.success("Profile updated successfully");

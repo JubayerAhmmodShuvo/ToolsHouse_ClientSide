@@ -5,7 +5,7 @@ import useReview from "../../hooks/useReview";
 const Review = () => {
   const [review, setReview] = useReview();
   // useEffect(() => {
-  //   fetch("https://tools-two-gold.vercel.app/review")
+  //   fetch("https://tools-manufacturer-server-smoky.vercel.app/review")
   //     .then((res) => res.json())
   //     .then((data) => setReview(data));
   // }, []);

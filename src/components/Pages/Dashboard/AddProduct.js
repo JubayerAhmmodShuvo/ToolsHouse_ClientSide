@@ -39,7 +39,7 @@ const AddProduct = () => {
             quantity: data.quantity,
           };
 
-          const url = `https://tools-two-gold.vercel.app/services`;
+          const url = `https://tools-manufacturer-server-smoky.vercel.app/services`;
           fetch(url, {
             method: "POST",
             headers: {

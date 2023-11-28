@@ -17,12 +17,15 @@ const MyOrder = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`https://tools-two-gold.vercel.app/order?email=${user.email}`, {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      })
+      fetch(
+        `https://tools-manufacturer-server-smoky.vercel.app/order?email=${user.email}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      )
         .then((res) => {
           if (res.status === 401 || res.status === 403) {
             signOut(auth);

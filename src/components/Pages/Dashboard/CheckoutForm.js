@@ -13,14 +13,17 @@ const CheckoutForm = ({ order }) => {
   const { _id, price, name, userName, quantity, email } = order;
 
   useEffect(() => {
-    fetch("https://tools-two-gold.vercel.app/create-payment-intent", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-      body: JSON.stringify({ price }),
-    })
+    fetch(
+      "https://tools-manufacturer-server-smoky.vercel.app/create-payment-intent",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify({ price }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data?.clientSecret) {
@@ -75,7 +78,7 @@ const CheckoutForm = ({ order }) => {
         order: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://tools-two-gold.vercel.app/order/${_id}`, {
+      fetch(`https://tools-manufacturer-server-smoky.vercel.app/order/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

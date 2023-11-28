@@ -4,12 +4,15 @@ import { toast } from "react-toastify";
 const DeleteConfirmModal = ({ service, setDeletingService, refetch }) => {
   const { name, _id } = service;
   const handleDelete = () => {
-    fetch(`https://tools-two-gold.vercel.app/services/${_id}`, {
-      method: "DELETE",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
+    fetch(
+      `https://tools-manufacturer-server-smoky.vercel.app/services/${_id}`,
+      {
+        method: "DELETE",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
