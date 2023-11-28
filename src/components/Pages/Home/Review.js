@@ -1,12 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import SingleReview from "./SingleReview";
-import useReview from "../../hooks/useReview";
+
 
 const Review = () => {
-  const [reviews, setReview] = useReview();
+  const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("https://tools-manufacturer-server-smoky.vercel.app/review")
+      .then((res) => res.json())
+      .then((data) => {
+        setReviews(data);
+        setIsLoading(false);
+      });
+  }, []);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div className="my-32  ">
+    <div className="my-32  ">
       <h1 className="text-3xl font-bold my-20 text-center text-secondary">
         Our Happy Clients
       </h1>
