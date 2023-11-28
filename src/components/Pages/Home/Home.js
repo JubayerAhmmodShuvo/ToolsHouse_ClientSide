@@ -29,13 +29,13 @@ const Home = () => {
       });
   }, []);
 
-  if (isLoadingServices || isLoadingReviews) {
-    return (
-      <div>
-        <Loading />
-      </div>
-    );
-  }
+  // if (isLoadingServices || isLoadingReviews) {
+  //   return (
+  //     <div>
+  //       <Loading />
+  //     </div>
+  //   );
+  // }
 
   return (
     <div>
