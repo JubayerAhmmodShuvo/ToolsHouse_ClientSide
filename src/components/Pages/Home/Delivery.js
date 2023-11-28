@@ -11,8 +11,8 @@ const Delivery = () => {
           Our Delivery Service
         </span>
       </h1>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 my-10 gap-8 container">
-        <div className="card border card-compact w-96 bg-base-100 shadow-xl ">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 my-10 gap-8 container ">
+        <div className="card border card-compact w-96 bg-base-100 shadow-xl mx-auto ">
           <h1 className="text-3xl font-xl text-center p-4 text-secondary font-serif ">
             International Shipping
           </h1>
@@ -29,7 +29,7 @@ const Delivery = () => {
             where are you from.
           </p>
         </div>
-        <div className="card border card-compact w-96 bg-base-100 shadow-xl ">
+        <div className="card border card-compact w-96 bg-base-100 shadow-xl mx-auto ">
           <h1 className="text-3xl font-xl text-center p-4 font-serif text-secondary ">
             Internal Shipping
           </h1>
@@ -46,7 +46,7 @@ const Delivery = () => {
             of time.
           </p>
         </div>
-        <div className="card border card-compact w-96 bg-base-100 shadow-xl ">
+        <div className="card border card-compact w-96 bg-base-100 shadow-xl mx-auto ">
           <h1 className="text-3xl font-xl text-center p-4 font-serif text-secondary ">
             City Shipping
           </h1>
