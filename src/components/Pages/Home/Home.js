@@ -1,4 +1,3 @@
-// Home.jsx
 import React, { useState, useEffect } from "react";
 import Banner from "./Banner";
 import Delivery from "./Delivery";
@@ -15,34 +14,36 @@ const Home = () => {
   const [isLoadingReviews, setIsLoadingReviews] = useState(true);
 
   useEffect(() => {
-    // Fetch services
     fetch("https://tools-manufacturer-server-smoky.vercel.app/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
         setIsLoadingServices(false);
-      });
 
-    // Fetch reviews
-    fetch("https://tools-manufacturer-server-smoky.vercel.app/review")
-      .then((res) => res.json())
-      .then((data) => {
-        setReviews(data);
-        setIsLoadingReviews(false);
+        fetch("https://tools-manufacturer-server-smoky.vercel.app/review")
+          .then((res) => res.json())
+          .then((data) => {
+            setReviews(data);
+            setIsLoadingReviews(false);
+          });
       });
   }, []);
 
-  if (isLoadingServices && isLoadingReviews) {
-    return <div><Loading /></div>;
+  if (isLoadingServices || isLoadingReviews) {
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 
   return (
     <div>
       <Banner />
-      <Services services={services} isLoading={isLoadingServices} />
+      <Services services={services} />
       <Upcoming />
       <Summary />
-      <Review reviews={reviews}  />
+      <Review reviews={reviews} />
       <Delivery />
     </div>
   );

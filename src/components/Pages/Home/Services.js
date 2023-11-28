@@ -3,12 +3,6 @@ import SingleService from "./SingleService";
 import Loading from "../Loading/Loading";
 
 const Services = ({ services, isLoading }) => {
-  
-
-  if (isLoading) {
-    return <div><Loading /></div>;
-  }
-
   return (
     <div className="mb-20">
       <h1 className="text-4xl font-semibold italic text-center my-8">
