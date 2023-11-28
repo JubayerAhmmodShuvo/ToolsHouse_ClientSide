@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 
 const useReview = () => {
-  const [review, setReview] = useState([]);
+  const [reviews, setReviews] = useState([]);
+
   useEffect(() => {
     fetch("https://tools-manufacturer-server-smoky.vercel.app/review")
       .then((res) => res.json())
-      .then((data) => setReview(data));
+      .then((data) => setReviews(data));
   }, []);
-  return [review, setReview];
+
+  return [reviews, setReviews];
 };
 
 export default useReview;
