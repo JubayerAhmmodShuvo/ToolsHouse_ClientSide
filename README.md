@@ -3,7 +3,7 @@
 ## Live Link: [SQUIRREL TOOLS](https://tools-manufacturer-4bdef.web.app/)
 
 [Client Side](https://github.com/JubayerAhmmodShuvo/ToolsHouse_ClientSide) </br>
-[Server Side](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-JubayerAhmmodShuvo)
+[Server Side](https://github.com/JubayerAhmmodShuvo/ToolsHouse_ServerSide)
 </br>
 
 
