@@ -18,7 +18,7 @@ const MyOrder = () => {
   useEffect(() => {
     if (user) {
       fetch(
-        `https://tools-manufacturer-server-smoky.vercel.app/order?email=${user.email}`,
+        `https://tools-house-server-side-v8i5.vercel.app/order?email=${user.email}`,
         {
           method: "GET",
           headers: {

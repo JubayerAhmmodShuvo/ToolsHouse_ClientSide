@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const Modal = ({ deleteItem, setDeleteItem, setReload }) => {
   const { _id, name } = deleteItem;
   const handleDeleteBtn = () => {
-    fetch(`https://tools-manufacturer-server-smoky.vercel.app/order/${_id}`, {
+    fetch(`https://tools-house-server-side-v8i5.vercel.app/order/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

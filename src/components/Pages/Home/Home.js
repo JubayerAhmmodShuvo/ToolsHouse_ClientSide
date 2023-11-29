@@ -14,13 +14,13 @@ const Home = () => {
   const [isLoadingReviews, setIsLoadingReviews] = useState(true);
 
   useEffect(() => {
-    fetch("https://tools-manufacturer-server-smoky.vercel.app/services")
+    fetch("https://tools-house-server-side-v8i5.vercel.app/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
         setIsLoadingServices(false);
 
-        fetch("https://tools-manufacturer-server-smoky.vercel.app/review")
+        fetch("https://tools-house-server-side-v8i5.vercel.app/review")
           .then((res) => res.json())
           .then((data) => {
             setReviews(data);

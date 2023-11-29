@@ -18,7 +18,7 @@ const Profile = () => {
   useEffect(() => {
     if (user) {
       fetch(
-        `https://tools-manufacturer-server-smoky.vercel.app/userprofile/${user.email}`,
+        `https://tools-house-server-side-v8i5.vercel.app/userprofile/${user.email}`,
         {
           method: "GET",
           headers: {
@@ -50,7 +50,7 @@ const Profile = () => {
     const email = user?.email;
     if (email) {
       fetch(
-        `https://tools-manufacturer-server-smoky.vercel.app/userprofile/${email}`,
+        `https://tools-house-server-side-v8i5.vercel.app/userprofile/${email}`,
         {
           method: "PUT",
           headers: {

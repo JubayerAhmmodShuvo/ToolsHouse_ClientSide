@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 const AllOrders = ({ order, setDeletingOrder, index, refetch }) => {
   const handleUpdateStatus = (id) => {
-    fetch(`https://tools-manufacturer-server-smoky.vercel.app/order/${id}`, {
+    fetch(`https://tools-house-server-side-v8i5.vercel.app/order/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

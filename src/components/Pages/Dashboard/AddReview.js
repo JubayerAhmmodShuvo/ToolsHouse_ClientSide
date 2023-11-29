@@ -37,7 +37,7 @@ const AddReview = () => {
             rating: data.rating,
           };
           // console.log(review);
-          const url = `https://tools-manufacturer-server-smoky.vercel.app/review`;
+          const url = `https://tools-house-server-side-v8i5.vercel.app/review`;
           fetch(url, {
             method: "POST",
             headers: {
